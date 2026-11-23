@@ -1,0 +1,111 @@
+:root {
+  --accent: #b94d32;
+  --ink: #181816;
+  --muted: #686860;
+  --paper: #f7f5ef;
+  --line: #d9d5ca;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; line-height: 1.55; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid #1d64a7; outline-offset: 3px; }
+.shell { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+.site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); background: rgba(247,245,239,.96); }
+.header-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; }
+.wordmark { display: flex; flex-direction: column; text-decoration: none; font-weight: 800; line-height: 1.05; }
+.wordmark small { color: var(--accent); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; margin-top: 5px; }
+.header-inner nav { display: flex; gap: 22px; }
+.header-inner nav a { min-height: 44px; display: inline-flex; align-items: center; font-weight: 700; text-decoration: none; }
+.header-inner nav a:hover { color: var(--accent); }
+.preview-notice { background: #fff0a8; border-bottom: 1px solid #cdb95e; }
+.preview-notice .shell { min-height: 44px; display: flex; align-items: center; font-weight: 700; }
+.hero { min-height: 360px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+.eyebrow { color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.hero h1 { max-width: 760px; margin: 10px 0 14px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: .98; letter-spacing: -.04em; }
+.hero > p:not(.eyebrow) { max-width: 620px; color: var(--muted); font-size: 1.12rem; }
+.button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; margin-top: 10px; border: 1px solid var(--accent); border-radius: 4px; background: var(--accent); color: white; padding: 12px 18px; font-weight: 800; text-decoration: none; text-align: center; }
+.button:hover { background: #963d27; }
+.button-small { width: 100%; margin: 0; }
+.course-section { padding: 70px 0 80px; border-top: 1px solid var(--line); }
+.section-heading { margin-bottom: 28px; }
+.section-heading h2, .campus h2, .detail-layout h1, .detail-sections h2 { font-family: Georgia, "Times New Roman", serif; }
+.section-heading h2 { margin: 6px 0; font-size: clamp(2rem, 4vw, 3.2rem); }
+.course-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+.course-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.course-card-body { min-height: 210px; display: flex; flex-direction: column; padding: 22px; }
+.course-card h3 { margin: 0 0 8px; font-size: 1.25rem; }
+.course-card p { margin: 0 0 16px; color: var(--muted); }
+.text-link { min-height: 44px; display: inline-flex; align-items: center; margin-top: auto; color: #963d27; font-weight: 800; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.course-visual { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #e9e5da; }
+.course-visual img { object-fit: cover; }
+.course-visual-large { aspect-ratio: 16 / 10; }
+.course-cover { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #e5dfcf; }
+.course-cover .motif-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(24,24,22,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(24,24,22,.08) 1px, transparent 1px); background-size: 24px 24px; }
+.motif-panel { position: absolute; width: 62%; height: 66%; left: 19%; top: 17%; display: grid; align-content: center; gap: 10px; padding: 20px; border: 2px solid #181816; border-radius: 3px; background: #fdfcf7; transform: rotate(-2deg); box-shadow: 12px 12px 0 var(--accent); }
+.motif-panel b { font-family: Georgia, serif; font-size: clamp(.9rem, 2vw, 1.35rem); }
+.motif-panel i { display: block; height: 7px; border-radius: 10px; background: #77776d; }
+.motif-panel i:nth-last-child(1) { width: 55%; }
+.motif-amazon-va { background: #dce7da; }
+.motif-digital-marketing { background: #d8e1ee; }
+.motif-digital-marketing .motif-panel { box-shadow: 12px 12px 0 #4d7198; transform: rotate(2deg); }
+.motif-quickbooks-online-bookkeeping { background: #ded8ce; }
+.motif-quickbooks-online-bookkeeping .motif-panel { box-shadow: 12px 12px 0 #6f7e58; }
+.motif-data-entry-va { background: #d9e3e1; }
+.motif-data-entry-va .motif-panel { width: 72%; left: 14%; box-shadow: 12px 12px 0 #3d7774; }
+.motif-upwork-freelancing { background: #e6ddd4; }
+.motif-upwork-freelancing .motif-panel { box-shadow: 12px 12px 0 #8c6a54; transform: rotate(-1deg); }
+.campus { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding-top: 50px; padding-bottom: 70px; border-top: 1px solid var(--line); }
+.campus h2 { margin: 6px 0; font-size: 2.2rem; }
+.campus-contact { border-left: 1px solid var(--line); padding-left: 30px; }
+.campus-contact strong { color: var(--muted); }
+.campus-contact a { min-height: 44px; display: inline-flex; align-items: center; font-weight: 800; }
+.course-detail { padding-top: 38px; padding-bottom: 100px; }
+.back-link { min-height: 44px; display: inline-flex; align-items: center; color: var(--muted); font-weight: 700; text-decoration: none; }
+.detail-layout { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(250px, .65fr); gap: 38px; align-items: start; }
+.detail-layout h1 { margin: 8px 0 12px; font-size: clamp(2.4rem, 6vw, 4.8rem); line-height: 1; }
+.summary { max-width: 650px; color: var(--muted); font-size: 1.15rem; }
+.detail-layout .course-visual, .detail-layout .course-cover { margin-top: 28px; }
+.course-facts { position: sticky; top: 100px; border: 1px solid var(--line); border-radius: 8px; background: white; padding: 22px; }
+.course-facts h2 { margin: 0 0 10px; font-size: 1.15rem; }
+.course-facts p { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding: 12px 0; margin: 0; }
+.course-facts p strong { color: var(--muted); }
+.course-facts p span { text-align: right; }
+.course-facts .button { width: 100%; display: flex; }
+.course-facts .official-phone { display: block; }
+.official-phone span { user-select: all; }
+.detail-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 38px; }
+.detail-sections section { border-top: 2px solid var(--ink); padding-top: 14px; }
+.detail-sections h2 { margin: 0 0 14px; }
+.detail-sections ul, .detail-sections ol { padding-left: 22px; }
+.detail-sections li { margin: 8px 0; }
+.state-panel { border: 1px solid var(--line); border-radius: 8px; background: white; padding: 28px; }
+.detail-state { min-height: 520px; display: grid; align-content: center; }
+.mobile-contact-bar { display: none; }
+.site-footer { border-top: 1px solid var(--line); background: #efede6; }
+.footer-inner { min-height: 110px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.footer-inner nav { display: flex; flex-wrap: wrap; gap: 18px; }
+.footer-inner a { min-height: 44px; display: inline-flex; align-items: center; font-weight: 700; }
+
+@media (min-width: 641px) {
+  .course-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 980px) {
+  .course-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .shell { width: min(100% - 32px, 1120px); }
+  .header-inner { min-height: 70px; }
+  .header-inner nav { gap: 12px; }
+  .hero { min-height: 420px; }
+  .hero h1 { font-size: clamp(2.7rem, 13vw, 4.2rem); }
+  .campus { grid-template-columns: 1fr; }
+  .campus-contact { border-left: 0; border-top: 1px solid var(--line); padding: 22px 0 0; }
+  .detail-layout { grid-template-columns: 1fr; }
+  .course-facts { position: static; }
+  .detail-sections { grid-template-columns: 1fr; }
+  .course-detail { padding-bottom: 150px; }
+  .mobile-contact-bar { position: fixed; z-index: 30; left: 0; right: 0; bottom: 0; display: block; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: rgba(247,245,239,.98); }
+  .footer-inner { align-items: flex-start; flex-direction: column; padding: 22px 0; }
+}
