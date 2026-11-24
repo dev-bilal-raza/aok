@@ -10,7 +10,7 @@ export function Header() {
         </Link>
         <nav aria-label="Main navigation">
           <Link href="/#courses">Courses</Link>
-          <Link href="/#campus">Campus</Link>
+          <Link href="/#campus">About campus</Link>
         </nav>
       </div>
     </header>

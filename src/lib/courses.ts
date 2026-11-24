@@ -34,7 +34,21 @@ export async function getCatalogue(): Promise<CatalogueResult> {
       if (!process.env.VERCEL_ENV) return { status: "ok", courses: previewCourses, isDemo: false };
       return { status: "empty", courses: [], isDemo: false };
     }
-    return { status: "ok", courses: data as Course[], isDemo: false };
+    const liveCourses = data as Course[];
+    if (!process.env.VERCEL_ENV) {
+      const courses = liveCourses.map((course) => {
+        const preview = previewCourses.find((item) => item.slug === course.slug);
+        if (!preview) return course;
+        return {
+          ...course,
+          summary: course.summary.startsWith("Explore ") ? preview.summary : course.summary,
+          outcomes: course.outcomes?.length ? course.outcomes : preview.outcomes,
+          syllabus: course.syllabus?.length ? course.syllabus : preview.syllabus,
+        };
+      });
+      return { status: "ok", courses, isDemo: false };
+    }
+    return { status: "ok", courses: liveCourses, isDemo: false };
   } catch {
     return { status: "database_error", courses: [], isDemo: false };
   }
