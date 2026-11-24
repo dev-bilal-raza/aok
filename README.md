@@ -47,6 +47,7 @@ npm run start
 1. Create a Supabase project.
 2. In the SQL Editor, run `supabase/migrations/001_courses.sql`.
 3. Run `supabase/seed.sql`.
+4. For the existing five draft rows, run `supabase/update_course_details.sql` once to add only missing outcomes and syllabus.
 4. The seed is rerunnable and never overwrites existing course rows.
 
 The migration creates one `public.courses` table, a UUID key, unique slug, RLS, public `SELECT` grants, and a published-only select policy. Public insert, update, and delete privileges and policies are not granted.
